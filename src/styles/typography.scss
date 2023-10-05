@@ -1,0 +1,45 @@
+.title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: var(--color-grey-600);
+
+    &.title1 {
+        line-height: 1.75rem;
+        color: var(--white-fixed);
+        /* title title1 => colocar no "carrinho de compras"*/
+    }
+
+    &.two {
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+        color: var(--color-grey-600);
+
+        &.green {
+            color: var(--color-primary);
+        }
+
+        &.grey {
+            color: var(--color-grey-300);
+        }
+
+        &.btn {
+            line-height: 1.1875rem;
+            color: var(--white-fixed);
+        }
+
+        &.btn2 {
+            font-size: 1rem;
+            line-height: 1.1875rem;
+            color: var(--white-fixed);
+        }
+    }
+
+    &.three {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.0625rem;
+        color: var(--color-grey-300);
+    }
+}

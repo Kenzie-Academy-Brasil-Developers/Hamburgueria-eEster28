@@ -6,7 +6,6 @@ import { productsApi } from "../../services/api";
 
 export const HomePage = () => {
   const localAddProducts = localStorage.getItem("@PRODUCTSADD")
-  const [loding, setLoding] = useState(false)
   const [isVisible, setVisible] = useState(false)
   const [productList, setProductList] = useState([]);
   const [cartList, setCartList] = useState(localAddProducts ? JSON.parse(localAddProducts) : []);
@@ -31,47 +30,35 @@ export const HomePage = () => {
   const addProducts = (listProduct) => {
     if (!cartList.some(cartList => cartList.id === listProduct.id)) {
       setCartList([...cartList, listProduct])
-
-    } else {
-      alert("Produto já adicionado.")
     }
   }
 
   const removeProducts = (productId) => {
-    const newListProduct= cartList.filter(product => product.id !== productId)
+    const newListProduct = cartList.filter(product => product.id !== productId)
     setCartList(newListProduct)
   }
 
   const removeAllProducts = () => {
     localStorage.removeItem("@PRODUCTSADD")
+    setCartList([])
   }
- 
-
-  // useEffect montagem - carrega os produtos da API e joga em productList
-  // useEffect atualização - Storage (carregar no estado)salva os produtos no local
-  // adição, exclusão, e exclusão geral do carrinho
-  // renderizações condições e o estado para exibir ou não o carrinho
-  // filtro de busca
-  // estilizar tudo com sass de forma responsiva
-
- 
 
   return (
     <>
-      <Header setVisible={setVisible} />
+      <Header setVisible={setVisible} cartList={cartList} />
       <main>
-        <ProductList 
-          productList={productList} 
-          addProducts={addProducts} 
+        <ProductList
+          productList={productList}
+          addProducts={addProducts}
         />
 
-        {isVisible && 
-        <CartModal 
-          setVisible={setVisible} 
-          cartList={cartList} 
-          removeProducts={removeProducts}
-          removeAllProducts={removeAllProducts}
-        />}
+        {isVisible &&
+          <CartModal
+            setVisible={setVisible}
+            cartList={cartList}
+            removeProducts={removeProducts}
+            removeAllProducts={removeAllProducts}
+          />}
       </main>
     </>
   );

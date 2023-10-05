@@ -1,0 +1,56 @@
+.card {
+    width: 18.75rem;
+    height: 21.625rem;
+    border: 0.125rem solid var(--color-grey-100);
+    border-radius: 0.3125rem;
+
+    &:hover {
+        border: 0.125rem solid var(--color-primary);
+    }
+}
+
+.image {
+    width: 18.75rem;
+    height: 9.375rem;
+    border-radius: 0.3125rem 0rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-grey-0);
+}
+
+.information {
+    width: 16.375rem;
+    height: 9.5625rem;
+    margin: 0.9375rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    h3 {
+        margin-top: 0.625rem;
+    }
+
+    button {
+        width: 6.625rem;
+        height: 2.5rem;
+        border: 0.125rem solid var(--color-icon);
+        border-radius: 0.5rem;
+
+        background-color: var(--color-icon);
+        padding: 0rem, 1.25rem, 0rem, 1.25rem;
+
+        &:hover {
+            background-color: var(--color-primary);
+            border: 0.125rem solid var(--color-primary);
+        }
+
+        &:focus {
+            background-color: var(--color-primary);
+            border: 0.125rem solid var(--color-primary);
+        }
+    }
+}

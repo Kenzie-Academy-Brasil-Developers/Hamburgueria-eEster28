@@ -1,0 +1,17 @@
+.conteinerCard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    margin: 2rem 9.375rem 2rem 9.375rem;
+
+    @media (max-width: 768px) {
+        overflow-x: scroll;
+        flex-direction: row;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        margin: 2rem 1.5625rem  0rem  1.5625rem;
+    }
+}
+
