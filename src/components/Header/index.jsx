@@ -2,18 +2,18 @@ import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 
-export const Header = () => {
+export const Header = ({setVisible}) => {
    const [value, setValue] = useState("");
 
    return (
       <header>
          <img src={Logo} alt="Logo Kenzie Burguer" />
          <div>
-            <button>
+            <button onClick={()=> setVisible(true)}>
                 <MdShoppingCart size={21} />
                 <span>0</span>
             </button>
-            <form>
+            {/* <form>
                <input
                   type="text"
                   value={value}
@@ -22,7 +22,7 @@ export const Header = () => {
                <button type="submit">
                  <MdSearch size={21} />
                </button>
-            </form>
+            </form> */}
          </div>
       </header>
    );
